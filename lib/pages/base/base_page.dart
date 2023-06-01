@@ -16,8 +16,6 @@ class BasePage extends StatefulWidget {
 class _BasePageState extends State<BasePage> {
   late PageController _pageController;
   int _currentIndex = 0;
-  final Color _inactiveColor = Colors.grey;
-  final Color _backgroundColor = Colors.black;
 
   final List<Widget> _pageList = [
     const PlayHomePage(),
@@ -48,7 +46,6 @@ class _BasePageState extends State<BasePage> {
       ),
       bottomNavigationBar: BottomBar(
         containerHeight: 56,
-        backgroundColor: _backgroundColor,
         selectedIndex: _currentIndex,
         showElevation: true,
         itemCornerRadius: 24,
@@ -68,28 +65,24 @@ class _BasePageState extends State<BasePage> {
             icon: const ImageIcon(AssetImage('assets/images/handle.png')),
             title: const Text('游玩'),
             activeColor: const Color(0xffF4D144),
-            inactiveColor: _inactiveColor,
             textAlign: TextAlign.center,
           ),
           BottomBarItem(
             icon: const ImageIcon(AssetImage('assets/images/explore.png')),
             title: const Text('探索'),
             activeColor: Colors.greenAccent,
-            inactiveColor: _inactiveColor,
             textAlign: TextAlign.center,
           ),
           BottomBarItem(
             icon: const ImageIcon(AssetImage('assets/images/store.png')),
             title: const Text('商店'),
             activeColor: Colors.pink,
-            inactiveColor: _inactiveColor,
             textAlign: TextAlign.center,
           ),
           BottomBarItem(
             icon: const ImageIcon(AssetImage('assets/images/game_library.png')),
             title: const Text('游戏库'),
             activeColor: Colors.blue,
-            inactiveColor: _inactiveColor,
             textAlign: TextAlign.center,
           ),
         ],

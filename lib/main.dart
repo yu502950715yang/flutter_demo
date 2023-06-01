@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/common/app_theme.dart';
 import 'package:flutter_demo/pages/base/base_page.dart';
 
 void main() {
@@ -14,8 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       home: const BasePage(),
     );
   }

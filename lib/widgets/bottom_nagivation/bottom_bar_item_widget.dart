@@ -25,6 +25,8 @@ class BottomBarItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     double selectedWidth = 100;
     double unSelectedWidth = 50;
+    Color? unSelectIconColor =
+        Theme.of(context).bottomNavigationBarTheme.unselectedItemColor;
     //Flutter的“语义(Semantics)”可以注释应用的UI中其他的Widget。它具有将近五十个属性，
     //可用于为屏幕阅读器和其他基于语义分析的工具提供描述，元数据以及更多内容。
     return Semantics(
@@ -57,7 +59,7 @@ class BottomBarItemWidget extends StatelessWidget {
                       size: iconSize,
                       color: isSelected
                           ? item.activeColor.withOpacity(1)
-                          : item.inactiveColor ?? item.activeColor),
+                          : item.inactiveColor ?? unSelectIconColor),
                   child: item.icon,
                 ),
                 if (isSelected)

@@ -41,8 +41,8 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bgColor =
-        backgroundColor ?? Theme.of(context).bottomAppBarTheme.color;
+    final bgColor = backgroundColor ??
+        Theme.of(context).bottomNavigationBarTheme.backgroundColor;
 
     return Container(
       decoration: BoxDecoration(

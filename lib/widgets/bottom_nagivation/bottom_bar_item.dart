@@ -4,6 +4,7 @@ class BottomBarItem {
   final Widget icon;
   final Widget title;
   final Color activeColor;
+  // 未选中时的颜色
   final Color? inactiveColor;
   final TextAlign? textAlign;
 
