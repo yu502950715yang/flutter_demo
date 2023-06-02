@@ -9,16 +9,20 @@ class AppTheme {
 
   /// 明亮主题
   static ThemeData lightTheme = ThemeData(
-      primaryColor: ThemeData.light().scaffoldBackgroundColor,
-      colorScheme: const ColorScheme.light().copyWith(
-        primary: lightPrimaryColor,
-        secondary: secondaryColor,
-      ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.black87,
-        unselectedItemColor: Colors.grey,
+    primaryColor: ThemeData.light().scaffoldBackgroundColor,
+    colorScheme: const ColorScheme.light().copyWith(
+      primary: lightPrimaryColor,
+      secondary: secondaryColor,
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedItemColor: Colors.black87,
+      unselectedItemColor: Colors.grey,
+      backgroundColor: Colors.white,
+    ),
+    appBarTheme: const AppBarTheme(
         backgroundColor: Colors.white,
-      ));
+        iconTheme: IconThemeData(color: Colors.grey)),
+  );
 
   /// 深色主题
   static ThemeData darkTheme = ThemeData(
@@ -29,6 +33,9 @@ class AppTheme {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.blueGrey,
+      backgroundColor: Colors.black87,
+    ),
+    appBarTheme: const AppBarTheme(
       backgroundColor: Colors.black87,
     ),
   );

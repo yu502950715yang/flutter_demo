@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_demo/widgets/bottom_nagivation/bottom_bar_item.dart';
 import 'package:flutter_demo/widgets/bottom_nagivation/bottom_bar_item_widget.dart';
 
@@ -43,7 +44,10 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final bgColor = backgroundColor ??
         Theme.of(context).bottomNavigationBarTheme.backgroundColor;
-
+    // 设置底部控制栏的颜色
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      systemNavigationBarColor: bgColor,
+    ));
     return Container(
       decoration: BoxDecoration(
         color: bgColor,
