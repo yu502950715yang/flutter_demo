@@ -44,7 +44,7 @@ class _AvatarAppBarState extends State<AvatarAppBar> {
                 child: Text(
                   widget.player.nickName ?? '',
                   style: const TextStyle(
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

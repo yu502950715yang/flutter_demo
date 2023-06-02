@@ -9,6 +9,7 @@ class AppTheme {
 
   /// 明亮主题
   static ThemeData lightTheme = ThemeData(
+    fontFamily: 'SST',
     primaryColor: ThemeData.light().scaffoldBackgroundColor,
     colorScheme: const ColorScheme.light().copyWith(
       primary: lightPrimaryColor,
@@ -26,6 +27,7 @@ class AppTheme {
 
   /// 深色主题
   static ThemeData darkTheme = ThemeData(
+    fontFamily: 'SST',
     primaryColor: ThemeData.dark().scaffoldBackgroundColor,
     colorScheme: const ColorScheme.dark().copyWith(
       primary: darkPrimaryColor,
