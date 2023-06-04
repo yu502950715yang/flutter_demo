@@ -32,6 +32,10 @@ class NetImage extends StatelessWidget {
       headers: headers,
       fit: boxFit,
       loadingBuilder: (context, child, loadingProgress) {
+        // 为null时图片加载完成，返回child图片主体
+        if (loadingProgress == null) {
+          return child;
+        }
         return loadingWidget ??
             Container(
               color: Colors.grey.shade300,
