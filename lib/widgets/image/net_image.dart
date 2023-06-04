@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class NetImage extends StatelessWidget {
@@ -6,7 +7,7 @@ class NetImage extends StatelessWidget {
     required this.url,
     this.headers,
     this.boxFit = BoxFit.fill,
-    this.loadingWidget,
+    this.placeholder,
     this.errorWidget,
   });
 
@@ -19,32 +20,29 @@ class NetImage extends StatelessWidget {
   /// 图片裁剪方式
   final BoxFit? boxFit;
 
-  /// 加载中展示widget
-  final Widget? loadingWidget;
+  /// 默认展示widget
+  final Widget? placeholder;
 
   /// 加载失败展示widg
   final Widget? errorWidget;
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(
-      url,
-      headers: headers,
+    return CachedNetworkImage(
+      imageUrl: url,
+      httpHeaders: headers,
       fit: boxFit,
-      loadingBuilder: (context, child, loadingProgress) {
-        // 为null时图片加载完成，返回child图片主体
-        if (loadingProgress == null) {
-          return child;
-        }
-        return loadingWidget ??
+      placeholder: (context, url) {
+        return placeholder ??
             Container(
               color: Colors.grey.shade300,
             );
       },
-      errorBuilder: (context, error, stackTrace) {
+      errorWidget: (context, url, error) {
         return errorWidget ??
             Container(
               color: Colors.grey.shade300,
+              child: Image.asset('assets/images/img_loading_failed.png'),
             );
       },
     );
