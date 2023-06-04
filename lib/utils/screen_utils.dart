@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 //系统默认的appBar等高度
 //位于Dart Packages/flutter/src/material/constans.dart
 
@@ -44,7 +43,8 @@ class ScreenUtils {
   }
 
   _init() {
-    MediaQueryData mediaQuery = MediaQueryData.fromWindow(ui.window);
+    MediaQueryData mediaQuery = MediaQueryData.fromView(
+        WidgetsBinding.instance.platformDispatcher.views.first);
     _mediaQueryData = mediaQuery;
     _screenWidth = mediaQuery.size.width;
     _screenHeight = mediaQuery.size.height;

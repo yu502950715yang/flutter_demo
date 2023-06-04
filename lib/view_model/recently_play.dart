@@ -25,4 +25,14 @@ class RecentlyPlay {
     this.silverTrophy = 0,
     this.bronzeTrophy = 0,
   });
+
+  /// 总共获得的奖杯数
+  int get winTotalTrophy {
+    return platinumTrophy! + goldTrophy! + silverTrophy! + bronzeTrophy!;
+  }
+
+  /// 获取奖杯进度
+  double get trophySchedule {
+    return winTotalTrophy / totalTrophy;
+  }
 }

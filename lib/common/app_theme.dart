@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/common/color/circular_progress_colors.dart';
 import 'package:flutter_demo/utils/hex_color.dart';
 
 class AppTheme {
@@ -12,8 +13,8 @@ class AppTheme {
     fontFamily: 'SST',
     primaryColor: ThemeData.light().scaffoldBackgroundColor,
     colorScheme: const ColorScheme.light().copyWith(
-      primary: lightPrimaryColor,
-      secondary: secondaryColor,
+      primary: Colors.white,
+      secondary: Colors.grey.shade100,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.black87,
@@ -23,6 +24,10 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.grey)),
+    iconTheme: const IconThemeData(color: Colors.grey),
+    extensions: <ThemeExtension<dynamic>>[
+      CircularProcessColors.light,
+    ],
   );
 
   /// 深色主题
@@ -30,15 +35,19 @@ class AppTheme {
     fontFamily: 'SST',
     primaryColor: ThemeData.dark().scaffoldBackgroundColor,
     colorScheme: const ColorScheme.dark().copyWith(
-      primary: darkPrimaryColor,
+      primary: Colors.black,
+      secondary: Colors.black54,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.blueGrey,
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.black,
     ),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.black87,
     ),
+    extensions: <ThemeExtension<dynamic>>[
+      CircularProcessColors.dark,
+    ],
   );
 }
