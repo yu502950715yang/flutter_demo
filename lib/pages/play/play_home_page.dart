@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/view_model/player.dart';
 import 'package:flutter_demo/view_model/recently_play.dart';
 import 'package:flutter_demo/widgets/appbar/avatar_appbar.dart';
+import 'package:flutter_demo/widgets/image/net_image.dart';
 
 class PlayHomePage extends StatefulWidget {
   const PlayHomePage({super.key});
@@ -49,7 +50,7 @@ class _PlayHomePageState extends State<PlayHomePage> {
   Widget _buildListItem(int index) {
     RecentlyPlay recentlyPlay = _gameList[index];
     return Container(
-      color: Colors.grey,
+      color: Colors.white,
       child: Column(
         children: [
           if (index == 0) ...[
@@ -68,9 +69,8 @@ class _PlayHomePageState extends State<PlayHomePage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Image.network(
-                recentlyPlay.imageUrl,
-                fit: BoxFit.fill,
+              child: NetImage(
+                url: recentlyPlay.imageUrl,
               ),
             ),
           ),
