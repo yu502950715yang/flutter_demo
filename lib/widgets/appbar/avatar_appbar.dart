@@ -30,14 +30,30 @@ class _AvatarAppBarState extends State<AvatarAppBar> {
               const SizedBox(
                 width: 18,
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(50),
-                child: const Image(
-                  image: AssetImage('assets/images/avatar.png'),
-                  fit: BoxFit.cover,
-                  width: 45,
-                  height: 45,
-                ),
+              Stack(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: const Image(
+                      image: AssetImage('assets/images/avatar.png'),
+                      fit: BoxFit.cover,
+                      width: 45,
+                      height: 45,
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    bottom: 0,
+                    child: Container(
+                      width: 10,
+                      height: 10,
+                      decoration: BoxDecoration(
+                        color: Colors.lightGreen,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(width: 8),
               Expanded(
