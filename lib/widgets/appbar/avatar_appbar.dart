@@ -42,14 +42,14 @@ class _AvatarAppBarState extends State<AvatarAppBar> {
                     ),
                   ),
                   Positioned(
-                    right: 0,
-                    bottom: 0,
+                    right: 2,
+                    bottom: 2,
                     child: Container(
                       width: 10,
                       height: 10,
                       decoration: BoxDecoration(
-                        color: Colors.lightGreen,
-                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.green.shade300,
+                        shape: BoxShape.circle,
                       ),
                     ),
                   ),
