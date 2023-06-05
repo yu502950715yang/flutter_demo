@@ -10,21 +10,10 @@ class ExplorePage extends StatefulWidget {
 
 class _ExplorePageState extends State<ExplorePage>
     with SingleTickerProviderStateMixin {
-  int _currentIndex = 0;
   late TabController _tabController;
   final List<String> _tabs = [
-    '最新',
-    '精选',
-    '优惠',
-    'PS5',
-    '定期服务',
-    '浏览',
-    '最新',
-    '精选',
-    '优惠',
-    'PS5',
-    '定期服务',
-    '浏览'
+    '官方最新消息',
+    'PS Blog',
   ];
 
   @override
@@ -42,28 +31,18 @@ class _ExplorePageState extends State<ExplorePage>
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Center(
-          child: PsTabBar(
-        tabs: _tabs,
-        tabController: _tabController,
-      )),
+      child: Stack(
+        children: [
+          Positioned(
+            top: 25,
+            left: 0,
+            child: PsTabBar(
+              tabs: _tabs,
+              tabController: _tabController,
+            ),
+          ),
+        ],
+      ),
     );
-  }
-
-  List<Widget> _buildTabs() {
-    return _tabs.map((s) {
-      return Tab(
-        text: s,
-      );
-    }).toList();
-  }
-
-  int _valueGetter() {
-    return _currentIndex;
-  }
-
-  void _onTap(int index) {
-    _currentIndex = index;
-    setState(() {});
   }
 }
