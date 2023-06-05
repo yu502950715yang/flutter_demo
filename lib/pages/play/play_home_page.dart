@@ -30,13 +30,13 @@ class _PlayHomePageState extends State<PlayHomePage> {
         username: '502950715@qq.com', nickName: 'Eric Game', onlineStatus: '1');
     _gameList.add(RecentlyPlay(
         imageUrl:
-            'https://image.api.playstation.com/vulcan/ap/rnd/202010/2915/SqRcyLjZbpK26ej6TnWf43xp.jpg',
+            'https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/aUvkDs1bjV2Nd5SuNTzRECpi.jpg',
         totalTrophy: 80,
         bronzeTrophy: 27));
 
     _gameList.add(RecentlyPlay(
         imageUrl:
-            'https://gmedia.playstation.com/is/image/SIEPDC/hogwarts-legacy-hero-banner-desktop-01-en-24jan22?\$2400px\$',
+            'https://image.api.playstation.com/vulcan/ap/rnd/202208/0921/46OCOSLlnvNL5Ari9TUslJ07.jpg',
         totalTrophy: 46,
         goldTrophy: 1,
         silverTrophy: 7,
@@ -113,7 +113,8 @@ class _PlayHomePageState extends State<PlayHomePage> {
           const SizedBox(
             height: 10,
           ),
-          GestureDetector(
+          InkResponse(
+            splashColor: Colors.green,
             onTap: () {
               print('奖杯');
             },
