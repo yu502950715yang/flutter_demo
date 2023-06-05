@@ -51,11 +51,6 @@ class _BasePageState extends State<BasePage> {
         itemCornerRadius: 24,
         onItemSelected: (index) {
           _currentIndex = index;
-          // _pageController.animateToPage(
-          //   _currentIndex,
-          //   duration: const Duration(milliseconds: 200),
-          //   curve: Curves.ease,
-          // );
           _pageController.jumpToPage(_currentIndex);
           if (mounted) {
             setState(() {});
