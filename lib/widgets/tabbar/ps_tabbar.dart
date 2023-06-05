@@ -55,7 +55,7 @@ class _PsTabBarState extends State<PsTabBar> {
         child: Container(
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
-            color: containerColors!.background,
+            color: containerColors!.background?.withOpacity(0.8),
             borderRadius: BorderRadius.circular(widget.borderRadius),
           ),
           child: TabBar(
@@ -86,7 +86,7 @@ class _PsTabBarState extends State<PsTabBar> {
                     BorderRadius.all(Radius.circular(widget.borderRadius)),
                 color: containerColors.secoundBackground),
             indicatorPadding: const EdgeInsets.all(5),
-            labelStyle: const TextStyle(fontSize: 16),
+            labelStyle: const TextStyle(fontSize: 14),
             // 水波纹圆角设置，保证看起来与边框圆角一致
             splashBorderRadius:
                 BorderRadius.all(Radius.circular(widget.borderRadius)),
