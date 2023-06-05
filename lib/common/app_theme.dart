@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/common/color/circular_progress_colors.dart';
+import 'package:flutter_demo/common/color/container_colors.dart';
 import 'package:flutter_demo/utils/hex_color.dart';
 
 class AppTheme {
@@ -27,6 +28,7 @@ class AppTheme {
     iconTheme: const IconThemeData(color: Colors.grey),
     extensions: <ThemeExtension<dynamic>>[
       CircularProcessColors.light,
+      ContainerColors.light,
     ],
   );
 
@@ -48,6 +50,7 @@ class AppTheme {
     ),
     extensions: <ThemeExtension<dynamic>>[
       CircularProcessColors.dark,
+      ContainerColors.dark,
     ],
   );
 }
