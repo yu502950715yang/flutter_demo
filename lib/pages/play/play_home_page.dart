@@ -36,7 +36,7 @@ class _PlayHomePageState extends State<PlayHomePage> {
 
     _gameList.add(RecentlyPlay(
         imageUrl:
-            'https://image.api.playstation.com/vulcan/ap/rnd/202010/2915/SqRcyLjZbpK26ej6TnWf43xp.jpg',
+            'https://gmedia.playstation.com/is/image/SIEPDC/hogwarts-legacy-hero-banner-desktop-01-en-24jan22?\$2400px\$',
         totalTrophy: 46,
         goldTrophy: 1,
         silverTrophy: 7,
@@ -44,7 +44,7 @@ class _PlayHomePageState extends State<PlayHomePage> {
 
     _gameList.add(RecentlyPlay(
         imageUrl:
-            'https://image.api.playstation.com/vulcan/ap/rnd/202010/2915/SqRcyLjZbpK26ej6TnWf43xp.jpg',
+            'https://image.api.playstation.com/vulcan/ap/rnd/202203/0903/BRSykxZAAT0OuPrG5nJz19fg.jpg',
         totalTrophy: 41,
         goldTrophy: 1,
         bronzeTrophy: 19));
