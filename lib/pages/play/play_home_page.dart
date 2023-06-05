@@ -113,68 +113,62 @@ class _PlayHomePageState extends State<PlayHomePage> {
           const SizedBox(
             height: 10,
           ),
-          InkResponse(
-            splashColor: Colors.green,
-            onTap: () {
-              print('奖杯');
-            },
-            child: Column(
-              children: [
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('奖杯', style: TextStyle(fontSize: 16)),
-                    Icon(Icons.chevron_right),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          '${recentlyPlay.winTotalTrophy}',
-                          style: const TextStyle(fontSize: 22),
-                        ),
-                        const Text(
-                          '已获得',
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
-                    ),
-                    CircleProgress(
-                        value: recentlyPlay.trophySchedule, diameter: 80),
-                    Column(
-                      children: [
-                        Text(
-                          '${recentlyPlay.totalTrophy}',
-                          style: const TextStyle(fontSize: 22),
-                        ),
-                        const Text(
-                          '可获得的',
-                          style: TextStyle(fontSize: 12),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                TrophyRow(
-                  platinumNum: recentlyPlay.platinumTrophy,
-                  goldNum: recentlyPlay.goldTrophy,
-                  silverNum: recentlyPlay.silverTrophy,
-                  bronzeNum: recentlyPlay.bronzeTrophy,
-                ),
-                const SizedBox(
-                  height: 10,
-                )
-              ],
-            ),
+          Column(
+            children: [
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('奖杯', style: TextStyle(fontSize: 16)),
+                  Icon(Icons.chevron_right),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        '${recentlyPlay.winTotalTrophy}',
+                        style: const TextStyle(fontSize: 22),
+                      ),
+                      const Text(
+                        '已获得',
+                        style: TextStyle(fontSize: 12),
+                      )
+                    ],
+                  ),
+                  CircleProgress(
+                      value: recentlyPlay.trophySchedule, diameter: 80),
+                  Column(
+                    children: [
+                      Text(
+                        '${recentlyPlay.totalTrophy}',
+                        style: const TextStyle(fontSize: 22),
+                      ),
+                      const Text(
+                        '可获得的',
+                        style: TextStyle(fontSize: 12),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TrophyRow(
+                platinumNum: recentlyPlay.platinumTrophy,
+                goldNum: recentlyPlay.goldTrophy,
+                silverNum: recentlyPlay.silverTrophy,
+                bronzeNum: recentlyPlay.bronzeTrophy,
+              ),
+              const SizedBox(
+                height: 10,
+              )
+            ],
           )
         ],
       ),
