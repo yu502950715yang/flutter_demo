@@ -288,6 +288,7 @@ class _CupertinoTabBarState extends State<CupertinoTabBar>
 
   @override
   void dispose() {
+    _stopAnimation();
     if (_scrollController != null) _scrollController!.dispose();
     if (_animationController != null) _animationController!.dispose();
     super.dispose();
