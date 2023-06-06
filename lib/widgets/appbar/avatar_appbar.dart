@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/view_model/player.dart';
 
-class AvatarAppBar extends StatefulWidget implements PreferredSizeWidget {
+class AvatarAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AvatarAppBar({super.key, required this.player});
 
   final Player player;
 
-  @override
-  State<AvatarAppBar> createState() => _AvatarAppBarState();
-
-  @override
-  Size get preferredSize => const Size.fromHeight(54);
-}
-
-class _AvatarAppBarState extends State<AvatarAppBar> {
   @override
   Widget build(BuildContext context) {
     Color? bgColor = Theme.of(context).appBarTheme.backgroundColor;
@@ -58,7 +50,7 @@ class _AvatarAppBarState extends State<AvatarAppBar> {
               const SizedBox(width: 8),
               Expanded(
                 child: Text(
-                  widget.player.nickName ?? '',
+                  player.nickName ?? '',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -89,4 +81,7 @@ class _AvatarAppBarState extends State<AvatarAppBar> {
       ),
     );
   }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(54);
 }
