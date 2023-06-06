@@ -7,6 +7,8 @@ import 'package:flutter_demo/widgets/image/net_image.dart';
 import 'package:flutter_demo/widgets/progress_indicator/circle_progress.dart';
 import 'package:flutter_demo/widgets/trophy_row.dart/trophy_row.dart';
 
+import 'skeleton/play_home_skeleton.dart';
+
 class PlayHomePage extends StatefulWidget {
   const PlayHomePage({super.key});
 
@@ -57,15 +59,17 @@ class _PlayHomePageState extends State<PlayHomePage> {
       appBar: AvatarAppBar(
         player: _player,
       ),
-      body: ScrollConfiguration(
-        behavior: OverScrollBehavior(),
-        child: ListView.builder(
-          itemCount: _gameList.length,
-          itemBuilder: (context, index) {
-            return _buildListItem(index);
-          },
-        ),
-      ),
+      body: _gameList.isEmpty
+          ? const PlayHomeSkeleton()
+          : ScrollConfiguration(
+              behavior: OverScrollBehavior(),
+              child: ListView.builder(
+                itemCount: _gameList.length,
+                itemBuilder: (context, index) {
+                  return _buildListItem(index);
+                },
+              ),
+            ),
     );
   }
 
