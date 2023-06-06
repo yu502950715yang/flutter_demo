@@ -32,7 +32,7 @@ class AppTheme {
     ],
   );
 
-  /// 深色主题
+  /// 暗黑主题
   static ThemeData darkTheme = ThemeData(
     fontFamily: 'SST',
     primaryColor: ThemeData.dark().scaffoldBackgroundColor,
