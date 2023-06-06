@@ -16,6 +16,7 @@ class AppTheme {
     colorScheme: const ColorScheme.light().copyWith(
       primary: Colors.white,
       secondary: Colors.grey.shade100,
+      tertiary: Colors.black54,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.black87,
@@ -39,6 +40,7 @@ class AppTheme {
     colorScheme: const ColorScheme.dark().copyWith(
       primary: Colors.black,
       secondary: Colors.black54,
+      tertiary: Colors.grey.shade300,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.white,
