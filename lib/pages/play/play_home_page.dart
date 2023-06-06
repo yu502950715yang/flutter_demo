@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/common/scroll_configuration/over_scroll_behavior.dart';
 import 'package:flutter_demo/view_model/player.dart';
 import 'package:flutter_demo/view_model/recently_play.dart';
 import 'package:flutter_demo/widgets/appbar/avatar_appbar.dart';
@@ -56,11 +57,14 @@ class _PlayHomePageState extends State<PlayHomePage> {
       appBar: AvatarAppBar(
         player: _player,
       ),
-      body: ListView.builder(
-        itemCount: _gameList.length,
-        itemBuilder: (context, index) {
-          return _buildListItem(index);
-        },
+      body: ScrollConfiguration(
+        behavior: OverScrollBehavior(),
+        child: ListView.builder(
+          itemCount: _gameList.length,
+          itemBuilder: (context, index) {
+            return _buildListItem(index);
+          },
+        ),
       ),
     );
   }

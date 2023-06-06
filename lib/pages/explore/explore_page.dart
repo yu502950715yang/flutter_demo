@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/common/scroll_configuration/over_scroll_behavior.dart';
 import 'package:flutter_demo/view_model/recently_play.dart';
 import 'package:flutter_demo/widgets/image/net_image.dart';
 import 'package:flutter_demo/widgets/progress_indicator/circle_progress.dart';
@@ -63,12 +64,15 @@ class _ExplorePageState extends State<ExplorePage>
         children: [
           Container(
             color: Colors.white,
-            child: ListView.builder(
-              padding: const EdgeInsets.only(top: 65),
-              itemCount: _gameList.length,
-              itemBuilder: (context, index) {
-                return _buildListItem(index);
-              },
+            child: ScrollConfiguration(
+              behavior: OverScrollBehavior(),
+              child: ListView.builder(
+                padding: const EdgeInsets.only(top: 65),
+                itemCount: _gameList.length,
+                itemBuilder: (context, index) {
+                  return _buildListItem(index);
+                },
+              ),
             ),
           ),
           Positioned(
