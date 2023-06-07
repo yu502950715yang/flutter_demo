@@ -1,4 +1,6 @@
-class GameNews {
+import 'package:flutter/material.dart';
+
+class GameNews extends ChangeNotifier {
   /// 图标url
   String? iconUrl;
 
@@ -20,6 +22,13 @@ class GameNews {
   /// 新闻内容
   String? content;
 
+  bool playPS4;
+
+  bool playPS5;
+
+  /// 关注
+  bool interest;
+
   GameNews({
     this.iconUrl,
     this.title,
@@ -28,6 +37,9 @@ class GameNews {
     this.videoUrl,
     this.gameName,
     this.content,
+    this.playPS4 = true,
+    this.playPS5 = true,
+    this.interest = true,
   });
 
   static List<GameNews> get mokeData {
@@ -53,5 +65,10 @@ class GameNews {
           content:
               '在 GTA 在线模式: 圣安地列斯雇佣兵中，与精英飞行员和退役军人组成的团队一起行动，与梅利威瑟安保的庞大部队作战，这是一个横跨南圣安地列斯街头、海洋和天空的动感十足的全新更新，于6 月 13 日推出。'),
     ];
+  }
+
+  void changeInterest(bool value) {
+    interest = value;
+    notifyListeners();
   }
 }

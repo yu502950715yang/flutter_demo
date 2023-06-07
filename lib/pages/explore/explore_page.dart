@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/common/scroll_configuration/over_scroll_behavior.dart';
 import 'package:flutter_demo/view_model/game_news.dart';
+import 'package:flutter_demo/widgets/container/ps_container.dart';
 import 'package:flutter_demo/widgets/image/net_image.dart';
 import 'package:flutter_demo/widgets/tabbar/ps_tabbar.dart';
+import 'package:provider/provider.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key});
@@ -146,10 +149,11 @@ class _ExplorePageState extends State<ExplorePage>
                 width: 5,
               ),
               IconButton(
-                  onPressed: () {
-                    print('点击三个点');
-                  },
-                  icon: const Icon(Icons.more_horiz)),
+                onPressed: () {
+                  _showBeLikeSheet(index);
+                },
+                icon: const Icon(Icons.more_horiz),
+              ),
             ],
           ),
           const SizedBox(
@@ -227,6 +231,115 @@ class _ExplorePageState extends State<ExplorePage>
           )
         ],
       ),
+    );
+  }
+
+  void _showBeLikeSheet(int index) {
+    GameNews gameNews = _gameNewList[index];
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) {
+        return ChangeNotifierProvider.value(
+          value: gameNews,
+          child: Container(
+            height: 250,
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+            clipBehavior: Clip.antiAlias,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+            ),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      width: 80,
+                      height: 80,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: NetImage(url: gameNews.iconUrl!),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(gameNews.gameName ?? ''),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              if (gameNews.playPS4) ...[
+                                const PsContainer(title: 'PS4'),
+                              ],
+                              if (gameNews.playPS5) ...[
+                                if (gameNews.playPS4) ...[
+                                  const SizedBox(
+                                    width: 5,
+                                  ),
+                                ],
+                                const PsContainer(title: 'PS5'),
+                              ]
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const Divider(
+                  thickness: 2,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      '关注游戏',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    Consumer<GameNews>(
+                      builder: (context, value, child) {
+                        return CupertinoSwitch(
+                          value: value.interest,
+                          onChanged: (value) {
+                            Provider.of<GameNews>(context, listen: false)
+                                .changeInterest(value);
+                          },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: MaterialButton(
+                    color: Colors.grey.shade300,
+                    minWidth: double.infinity,
+                    elevation: 0,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('完成'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
