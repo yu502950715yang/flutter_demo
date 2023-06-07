@@ -44,18 +44,37 @@ class _ExplorePageState extends State<ExplorePage>
     return SafeArea(
       child: Stack(
         children: [
-          Container(
-            color: Colors.white,
-            child: ScrollConfiguration(
-              behavior: OverScrollBehavior(),
-              child: ListView.builder(
-                padding: const EdgeInsets.only(top: 65),
-                itemCount: _gameNewList.length,
-                itemBuilder: (context, index) {
-                  return _buildListItem(index);
-                },
+          TabBarView(
+            controller: _tabController,
+            physics: const NeverScrollableScrollPhysics(),
+            children: [
+              Container(
+                color: Colors.white,
+                child: ScrollConfiguration(
+                  behavior: OverScrollBehavior(),
+                  child: ListView.builder(
+                    padding: const EdgeInsets.only(top: 70),
+                    itemCount: _gameNewList.length,
+                    itemBuilder: (context, index) {
+                      return _buildListItem(index);
+                    },
+                  ),
+                ),
               ),
-            ),
+              Container(
+                color: Colors.white,
+                child: ScrollConfiguration(
+                  behavior: OverScrollBehavior(),
+                  child: ListView.builder(
+                    padding: const EdgeInsets.only(top: 70),
+                    itemCount: _gameNewList.length,
+                    itemBuilder: (context, index) {
+                      return _buildListItem(index);
+                    },
+                  ),
+                ),
+              )
+            ],
           ),
           Positioned(
             top: 25,
