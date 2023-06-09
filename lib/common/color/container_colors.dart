@@ -10,8 +10,8 @@ class ContainerColors extends ThemeExtension<ContainerColors> {
   static final dark = ContainerColors(
     background: Colors.black,
     secoundBackground: Colors.grey.shade800,
-    deepBackground: Colors.grey,
-    deepBackgroundText: Colors.black,
+    deepBackground: Colors.black,
+    deepBackgroundText: Colors.white,
   );
 
   const ContainerColors({

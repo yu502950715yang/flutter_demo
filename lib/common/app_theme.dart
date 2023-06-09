@@ -17,6 +17,8 @@ class AppTheme {
       primary: Colors.white,
       secondary: Colors.grey.shade100,
       tertiary: Colors.black54,
+      primaryContainer: Colors.white,
+      secondaryContainer: Colors.grey.shade300,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.black87,
@@ -27,6 +29,7 @@ class AppTheme {
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.grey)),
     iconTheme: const IconThemeData(color: Colors.grey),
+    buttonTheme: ButtonThemeData(buttonColor: Colors.grey.shade300),
     extensions: <ThemeExtension<dynamic>>[
       CircularProcessColors.light,
       ContainerColors.light,
@@ -40,7 +43,9 @@ class AppTheme {
     colorScheme: const ColorScheme.dark().copyWith(
       primary: Colors.black,
       secondary: Colors.black54,
-      tertiary: Colors.grey.shade300,
+      tertiary: Colors.grey.shade500,
+      primaryContainer: Colors.grey.shade900,
+      secondaryContainer: Colors.grey.shade800,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.white,

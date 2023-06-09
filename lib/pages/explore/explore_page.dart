@@ -44,6 +44,7 @@ class _ExplorePageState extends State<ExplorePage>
 
   @override
   Widget build(BuildContext context) {
+    Color? bgColor = Theme.of(context).colorScheme.primary;
     return SafeArea(
       child: Stack(
         children: [
@@ -52,7 +53,7 @@ class _ExplorePageState extends State<ExplorePage>
             physics: const NeverScrollableScrollPhysics(),
             children: [
               Container(
-                color: Colors.white,
+                color: bgColor,
                 child: ScrollConfiguration(
                   behavior: OverScrollBehavior(),
                   child: ListView.builder(
@@ -65,7 +66,7 @@ class _ExplorePageState extends State<ExplorePage>
                 ),
               ),
               Container(
-                color: Colors.white,
+                color: bgColor,
                 child: ScrollConfiguration(
                   behavior: OverScrollBehavior(),
                   child: ListView.builder(
@@ -210,7 +211,7 @@ class _ExplorePageState extends State<ExplorePage>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               MaterialButton(
-                color: Colors.grey.shade300,
+                color: Theme.of(context).colorScheme.secondaryContainer,
                 elevation: 0,
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -236,6 +237,7 @@ class _ExplorePageState extends State<ExplorePage>
 
   void _showBeLikeSheet(int index) {
     GameNews gameNews = _gameNewList[index];
+    ColorScheme colorScheme = Theme.of(context).colorScheme;
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -247,9 +249,9 @@ class _ExplorePageState extends State<ExplorePage>
             height: 250,
             padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
             clipBehavior: Clip.antiAlias,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
+            decoration: BoxDecoration(
+              color: colorScheme.primaryContainer,
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(30),
                 topRight: Radius.circular(30),
               ),
@@ -324,7 +326,7 @@ class _ExplorePageState extends State<ExplorePage>
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: MaterialButton(
-                    color: Colors.grey.shade300,
+                    color: colorScheme.secondaryContainer,
                     minWidth: double.infinity,
                     elevation: 0,
                     shape: const RoundedRectangleBorder(
