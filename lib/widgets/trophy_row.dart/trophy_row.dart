@@ -32,17 +32,8 @@ class TrophyRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           _buildTrophyItem(TrophyType.platinum, platinumNum!),
-          const SizedBox(
-            width: 20,
-          ),
           _buildTrophyItem(TrophyType.gold, goldNum!),
-          const SizedBox(
-            width: 20,
-          ),
           _buildTrophyItem(TrophyType.silver, silverNum!),
-          const SizedBox(
-            width: 20,
-          ),
           _buildTrophyItem(TrophyType.bronze, bronzeNum!),
         ],
       ),
